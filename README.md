@@ -17,3 +17,9 @@ Step 3. We know a lot of patterns conceived in the omics data were not reported,
 ▪ Delivered high-level research in statistical analysis of molecular omics data and natural language processing analysis of literature data to infer highly explainable dependencies among biomedical features.
 ▪ Improved the efficiency of abstract-mining operation by developing rigorous pattern matching program using NLTK and Regex in Python
 ▪ Working on constructing a Knowledge-Graph by integrating findings from various data sources using BERT and unsupervised classification, which is directly used for nutrients-diet recommendations for diseased patients.
+
+## 19/12:
+- Main problem is we do not have a proper way to extract entity names - specifically metabolite names that mostly come in multiple words like Uridine 5 ' - diphosphate ( UDP ) - glucose dehydrogenase ( UGD ) and O - linked N - acetylglucosamine ( O - GlcNAc ). The current NER model recognises Uridine as a separate word, diphosphate as a separate word, which should not happen.
+- To fix this, we are trying Suffix tree based text alignment method and a fast way of comparing a word with pool of words (all disease and metabaloite words combined).
+- Handle symbols and other characters in the middle
+- Output entity list must contain only disease and metabolite connections, no other names.
